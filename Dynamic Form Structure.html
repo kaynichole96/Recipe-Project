@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WDV321 Advanced Javascript</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+    $(document).ready(function(){
+
+      $('#contactType').change(function(){
+        if($(this).val() === 'complaints'){
+          $('#hiddendiv1').css('display', 'inline-block');
+          $('#hiddendiv2').css('display', 'none');
+          $('#hiddendiv3').css('display', 'none');
+        }
+        else if ($(this).val() === 'technical') {
+          $('#hiddendiv2').css('display', 'inline-block');
+          $('#hiddendiv1').css('display', 'none');
+          $('#hiddendiv3').css('display', 'none');
+        }
+        else if ($(this).val() === 'product') {
+          $('#hiddendiv3').css('display', 'inline-block');
+          $('#hiddendiv1').css('display', 'none');
+          $('#hiddendiv2').css('display', 'none');
+        }
+      });
+
+    });
+
+    </script>
+
+    <style media="screen">
+      #hiddendiv1 {
+        display: none;
+      }
+      #hiddendiv2 {
+        display: none;
+      }
+      #hiddendiv3 {
+        display: none;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <h1>WDV321 Advanced Javascript</h1>
+    <h2>Dynamic Form Structure - Assignment</h2>
+    <p>Use this page as the basis for your assignment. Given the drop down list provided on this page please do the following things.</p>
+    <p>
+      <label>Please Select your reason for contacting us.
+        <select name="contactType" id="contactType">
+          <option value="" selected disabled>Select one...</option>
+          <option value="complaints">Complaints</option>
+          <option value="technical">Technical Problems</option>
+          <option value="product">Product Issues</option>
+        </select>
+      </label>
+      <div id="hiddendiv1">
+        <label>How long has your issue been occuring?
+          <select name="contactType" id="contactType">
+            <option value="" selected disabled>Select one...</option>
+            <option value="1">Past 24 hours</option>
+            <option value="2">1-3 days</option>
+            <option value="3">7 days (one week)</option>
+          </select>
+        </label>
+      </div>
+      <div id="hiddendiv2">
+        <label for="option1">Server Issues
+          <input type="checkbox" name="option1" value="option1">
+        </label>
+        <label for="option2">Domain Transfers
+          <input type="checkbox" name="option2" value="option2">
+        </label>
+        <label for="option3">SQL Databases
+          <input type="checkbox" name="option3" value="option3">
+        </label>
+        <label for="option4">FTP Connection
+          <input type="checkbox" name="option4" value="option4">
+        </label>
+      </div>
+      <div id="hiddendiv3">
+        <p>Select how many times you have experienced the issue before</p>
+        <label>Once
+          <input type="radio" name="radios" value="">
+        </label>
+        <label>1-3 times
+          <input type="radio" name="radios" value="">
+        </label>
+        <label>5-10 times
+          <input type="radio" name="radios" value="">
+        </label>
+        <label>Never
+          <input type="radio" name="radios" value="">
+        </label>
+      </div>
+    </p>
+    <ol>
+      <li>When  Complaints are selected please dynamically create and display a new drop down list that includes at least four options of your choice.</li>
+      <li>When Technical Problems are selected please dynamically create and display at least four types of problems with an associated checkbox.</li>
+      <li>When Product Issues are selected please dynamically create and display at least four types options as a grouped set of radio buttons. </li>
+      <li>When a new option is selected your script should remove any of the dynamic content. </li>
+    </ol>
+
+  </body>
+</html>

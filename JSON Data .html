@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style media="screen">
+
+      body {
+        font-family: Arial;
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+    <h1 style="text-align:center;">JSON Data</h1>
+
+    <p style="text-decoration:underline;">Javabook</p>
+    <p id="demo"></p>
+
+    <br>
+    <br>
+    <br>
+
+    <p style="text-decoration:underline;">VB6 Book</p>
+    <p id="demo2"></p>
+
+    <br>
+    <br>
+    <br>
+
+
+    <p style="text-decoration:underline;">Main Object that contains both books</p>
+    <p id="demo3"></p>
+
+    <script type="text/javascript">
+
+    var javabook = {
+      "book": {
+        "isbn" : "0-596-00016-2",
+        "title"  : "Java and XML",
+        "price"       : "39.95",
+        "publisher"  : "O'Reilly &amp; Associates",
+        "copyright": "2000",
+          "authors": {
+            "author": {
+              "fname": "Brett",
+              "lname": "McLaughlin",
+              "price": "22.00"
+            }
+          }
+        }
+    };
+
+    var vb6book = {
+      "book": {
+        "isbn" : "1-861003-32-3",
+        "title"  : "Professional Visual Basic 6 XML",
+        "price"       : "49.99",
+        "publisher"  : "Wrox Press",
+        "copyright": "2000",
+          "authors": [{
+          "fname": "James",
+          "lname": "Britt",
+          "price": ""
+          }, {
+          "fname": "Tuen",
+          "lname": "Duynstee",
+          "price": ""
+        }]
+      }
+    };
+
+    var masterobject = {
+    javabook: javabook,
+    vb6book: vb6book
+    };
+
+    var myJSON = JSON.stringify(javabook);
+    var myJSON2 = JSON.stringify(vb6book);
+    var myJSON3 = JSON.stringify(masterobject);
+    var textbooks = [javabook, vb6book];
+
+    document.getElementById("demo").innerHTML = myJSON;
+    document.getElementById("demo2").innerHTML = myJSON2;
+    document.getElementById("demo3").innerHTML = myJSON3;
+
+
+
+
+    </script>
+
+  </body>
+</html>

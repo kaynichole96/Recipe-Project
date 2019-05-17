@@ -1,0 +1,82 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8">
+
+<title>WDV321 Advanced Javascript - JSON</title>
+
+<script
+
+ src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+
+ integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+
+ crossorigin="anonymous"></script>
+
+<script src="createJSON.js"></script><!--
+
+    The createJSON.js file will create a Javascript Object, convert it into a JSON object.
+
+   It will then store the JSON object in local storage as 'student1'.    Look at the createJSON.js code to determine the field names needed for this assignment.    Instructions:
+
+       1. Incorporate the createJSON.js file into this page as an external javascript file.
+
+       2. Access the JSON object in local storage and convert it into a javascript object.
+
+       3. Use the information in the object to complete the student card.
+
+--><style>
+ 
+    .studentCard    {
+
+        width:200px;
+
+        box-sizing:border-box;
+
+        background-color:lightblue;
+
+        padding-left:5px;
+
+        padding-top:3px;
+
+        border:thin solid blue;
+
+        box-shadow: 2px 2px 2px grey;        
+
+    }
+
+    
+
+    .studentCard h3    {
+
+        margin:0px;    
+
+    }
+
+</style>    <script>        $(document).ready(function(){        var info = JSON.parse(localStorage.getItem("student1"));        //alert(info);        document.getElementById("sdntID").innerHTML = info.student_id;        document.getElementById("gpa").innerHTML = info.student_gpa;        //alert(courses);        var seeCourses = info.student_courses;        document.getElementById("courses").innerHTML = info.student_courses[0] + "<br>" + info.student_courses[1] + "<br>" + info.student_courses[2];        }); //end document.ready    </script></head><body>
+
+    <h1>WDV321 Advanced Javascript</h1>
+
+   <h2>Unit-8 JSON Objects</h2>
+
+   <h3>Creating and consuming a JSON object</h3><div class="studentCard">
+
+   <h3>Student ID: <span id= "sdntID"></span></h3>
+
+   <p>Student GPA: 3.6<span id= "gpa"></span></p>
+
+    <p>Student Courses:
+
+       <ul>
+        <br> WDV101 </br>
+        <br> WDV131 </br>
+        <br> WDV105 </br>
+            
+       </ul>
+
+   </p></div></body>
+
+</html>

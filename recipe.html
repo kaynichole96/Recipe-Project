@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dynamic Recipe</title>
+<script src = "http://katelynneuhaus.info/321/recipe.js"></script>
+<link rel="stylesheet" href="http://katelynneuhaus.info/321/recipe%20css.css">
+<script src="http://katelynneuhaus.info/321/jquery.js"></script>
+<script src="http://katelynneuhaus.info/321/jquery2.js"></script>
+
+
+<script>
+$(function(){
+	$("#tabs").tabs();
+});
+
+$(function(){
+	$("#image1").tooltip({
+		items: "img",
+		show: {effect: "blind"},
+		hide: {effect: "blind"}
+	});
+	$("#image2").tooltip({
+		items: "img",
+		show: {effect: "blind"},
+		hide: {effect: "blind"}
+	});
+	$("#image3").tooltip({
+		items: "img",
+		show: {effect: "blind"},
+		hide: {effect: "blind"}
+	});
+});
+
+$(document).ready(function(){
+
+// ------------- R E C I P E    O N E ------------------
+
+	//ON PORTION CHANGE
+	$("input[type=radio][name=r1Portion]").change(function(){
+	
+		//FULL PORTION
+		if($("input[type=radio][name=r1Portion]:checked").val() == "full")
+			{
+				$("#chiliServe").html("6");
+				$("#chiliPrepTime").html("25");
+				$("#chiliCookTime").html("6");
+				$("#r1IngredientsList").html("1 pound of cooked ground beef<br>1 can of chili beans undrained<br>1 can of chili ready diced tomatoes<br>4 tbsp. Chili powder<br><br>1 cup shredded cheese (optional)<br>1/2 cup sour cream (optional)");
+				$("#r1Prep").html("<p>Heat cooking oil in 2 quart skillet.<br>Mix the meat, beans and tomatoes together in large pot, bring it to a boil and then simmer for about 15-30 minutes.</br><br> You could also combine in a crock pot and cook on low for 4-6 hours.</br><br>Serve into individual bowls and top with sour cream and cheese.</p>");
+			}
+		else
+		{
+			//HALF PORTION
+			if($("input[type=radio][name=r1Portion]:checked").val() == "half")
+			{
+				$("#chiliServe").html("3");
+				$("#chiliPrepTime").html("13");
+				$("#chiliCookTime").html("3");
+				$("#r1IngredientsList").html("1/2 pound of cooked ground beef<br>1/2 can of chili beans undrained<br>1/2 can of chili ready diced tomatoes<br>2 tbsp. Chili powder<br><br>1/2 cup shredded cheese (optional)<br>1/4 cup sour cream (optional)");
+				$("#r1Prep").html("<p>Heat cooking oil in 2 quart skillet.<br>Mix the meat, beans and tomatoes together in large pot, bring it to a boil and then simmer for about 15-30 minutes.</br><br> You could also combine in a crock pot and cook on low for 4-6 hours.</br><br>Serve into individual bowls and top with sour cream and cheese.</p>");
+			}
+			//DOUBLE PORTION
+			else
+			{
+			$("#chiliServe").html("12");
+			$("#chiliPrepTime").html("50");
+			$("#chiliCookTime").html("12");
+			$("#r1IngredientsList").html("2 pound of cooked ground beef<br>2 can of chili beans undrained<br>2 can of chili ready diced tomatoes<br>8 tbsp. Chili powder<br><br>2 cup shredded cheese (optional)<br>1 cup sour cream (optional)");
+			$("#r1Prep").html("<p>Heat cooking oil in 2 quart skillet.<br>Mix the meat, beans and tomatoes together in large pot, bring it to a boil and then simmer for about 15-30 minutes.</br><br> You could also combine in a crock pot and cook on low for 4-6 hours.</br><br>Serve into individual bowls and top with sour cream and cheese.</p>");
+			}
+		}
+	});
+
+	// INGREDIENTS FOR RECIPE 1
+	$("#showR1Ingredients").click(function(){
+		$("#chiliIngredients").css("display","inline");
+		$("#showR1Ingredients").css("display","none");
+		$("#hideR1Ingredients").css({"display":"inline","background-color":"white", "border":".15em solid black"});
+	})
+	//HIDE INGREDIENTS FOR RECIPE 1
+	$("#hideR1Ingredients").click(function(){
+		$("#chiliIngredients").css("display","none");
+		$("#showR1Ingredients").css({"display":"inline","background-color":"white", "border":".15em solid black"});
+		$("#hideR1Ingredients").css("display","none");
+	});
+	//SHOW INSTRUCTIONS FOR RECIPE 1
+	$("#showR1Instructions").click(function(){
+		$("#chiliInstructions").css("display","inline");
+		$("#showR1Instructions").css("display","none");
+		$("#hideR1Instructions").css({"display":"inline","background-color":"white", "border":".15em solid black"});
+	})
+	//HIDE INSTRUCTIONS FOR RECIPE 1
+	$("#hideR1Instructions").click(function(){
+		$("#chiliInstructions").css("display","none");
+		$("#showR1Instructions").css({"display":"inline","background-color":"white", "border":".15em solid black"});
+		$("#hideR1Instructions").css("display","none");
+	}); 
+	
+
+// ----------- R E C I P E    T W O -----------
+
+//ON PORTION CHANGE
+	$("input[type=radio][name=r2Portion]").change(function(){
+	
+		//FULL PORTION
+		if($("input[type=radio][name=r2Portion]:checked").val() == "full")
+			{
+				$("#r2Serve").html("24");
+				$("#r2PrepTime").html("15");
+				$("#r2CookTime1").html("3");
+				$("#r2CookTime2").html("25");
+				$("#r2IngredientsList").html("1 bag Rhodes Cinnamon Rolls (12 count - frozen)<br>1 box Cook & Serve Vanilla Pudding<br>1 stick of butter<br>");
+				$("#r2Prep").html("Spray 9x13 baking dish with cooking spray. Line dish with frozen cinnamon rolls.<br>Sprinkle pudding mix over the top of the cinnamon rolls. Melt stick of butter & drizzle on top.<br>Cover dish with saran wrap. Be sure to spray saran wrap with cooking spray to prevent sticking. Refrigerate overnight.<br>In the morning, set the cinnamon rolls out at room temperature for 45min - 1 hour prior to allow rolls to rise.<br>Preheat oven to 350 degrees & bake for 20 minutes. Ice while hot.<br>.");
+			}
+		else
+		{
+			//HALF PORTION
+			if($("input[type=radio][name=r2Portion]:checked").val() == "half")
+			{
+				$("#r2Serve").html("12");
+				$("#r2PrepTime").html("8");
+				$("#r2CookTime1").html("1");
+				$("#r2CookTime2").html("43");
+				$("#r2IngredientsList").html("1/2 bag Rhodes Cinnamon Rolls (6 count - frozen)<br>1/2 box Cook & Serve Vanilla Pudding<br>1/2 stick of butter<br>");
+				$("#r2Prep").html("Spray 9x13 baking dish with cooking spray. Line dish with frozen cinnamon rolls.<br>Sprinkle pudding mix over the top of the cinnamon rolls. Melt stick of butter & drizzle on top.<br>Cover dish with saran wrap. Be sure to spray saran wrap with cooking spray to prevent sticking. Refrigerate overnight.<br>In the morning, set the cinnamon rolls out at room temperature for 45min - 1 hour prior to allow rolls to rise.<br>Preheat oven to 350 degrees & bake for 20 minutes. Ice while hot.<br>.");
+			}
+			//DOUBLE PORTION
+			else
+			{
+				$("#r2Serve").html("48");
+				$("#r2PrepTime").html("30");
+				$("#r2CookTime1").html("6");
+				$("#r2CookTime2").html("50");
+				$("#r2IngredientsList").html("2 bag Rhodes Cinnamon Rolls (24 count - frozen)<br>2 box Cook & Serve Vanilla Pudding<br>2 stick of butter<br>");
+				$("#r2Prep").html("Spray 9x13 baking dish with cooking spray. Line dish with frozen cinnamon rolls.<br>Sprinkle pudding mix over the top of the cinnamon rolls. Melt stick of butter & drizzle on top.<br>Cover dish with saran wrap. Be sure to spray saran wrap with cooking spray to prevent sticking. Refrigerate overnight.<br>In the morning, set the cinnamon rolls out at room temperature for 45min - 1 hour prior to allow rolls to rise.<br>Preheat oven to 350 degrees & bake for 20 minutes. Ice while hot.<br>.");
+			}
+		}
+	});
+
+	// SHOW INGREDIENTS FOR RECIPE 2
+	$("#showR2Ingredients").click(function(){
+		$("#r2Ingredients").css("display","inline");
+		$("#showR2Ingredients").css("display","none");
+		$("#hideR2Ingredients").css({"display":"inline","background-color":"#white", "border":".15em solid black"});
+	})
+	//HIDE INGREDIENTS FOR RECIPE 1
+	$("#hideR2Ingredients").click(function(){
+		$("#r2Ingredients").css("display","none");
+		$("#showR2Ingredients").css({"display":"inline","background-color":"#white", "border":".15em solid black"});
+		$("#hideR2Ingredients").css("display","none");
+	});
+	//SHOW INSTRUCTIONS FOR RECIPE 1
+	$("#showR2Instructions").click(function(){
+		$("#r2Instructions").css("display","inline");
+		$("#showR2Instructions").css("display","none");
+		$("#hideR2Instructions").css({"display":"inline","background-color":"white", "border":".15em solid black"});
+	})
+	//HIDE INSTRUCTIONS FOR RECIPE 1
+	$("#hideR2Instructions").click(function(){
+		$("#r2Instructions").css("display","none");
+		$("#showR2Instructions").css({"display":"inline","background-color":"white", "border":".15em solid black"});
+		$("#hideR2Instructions").css("display","none");
+	}); 
+
+// ---------- R E C I P E    T H R E E  --------------
+
+//ON PORTION CHANGE
+	$("input[type=radio][name=r3Portion]").change(function(){
+	
+		//FULL PORTION
+		if($("input[type=radio][name=r3Portion]:checked").val() == "full")
+			{
+				$("#r3Serve").html("1 batch");
+				$("#r3PrepTime").html("1 hour 20 minutes");
+				$("#r3CookTime1").html("---");
+				$("#r3CookTime2").html("---");
+				$("#r3IngredientsList").html("<p>2 cups self rising cornmeal mix<br>2 eggs<br>2 tablespoons vegetable oil<br><br>1 cup buttermilk<br></p>");
+				$("#r3Prep").html("<p>Preheat the oven to 400 degrees.<br>If you are using cast iron, place the 1/4 cup oil in the bottom of a 9 skillet and place over high heat on your stovetop while you make the batter.<br>Pour the cornmeal into a bowl and add the oil, egg, and buttermilk.Mix until combined and drop a small amount into your skillet.<br>If it sizzles immediately, go ahead and pour in your batter to within 1 inch of the top.<br>Transfer the skillet from the stove top to the hot oven.<br>Bake 25-30 minutes or until golden and set.</p>");
+			}
+		else
+		{
+			//HALF PORTION
+			 if($("input[type=radio][name=r3Portion]:checked").val() == "half")
+			{
+				$("#r3Serve").html("1/2 batch");
+				$("#r3PrepTime").html("1 hour 10 minutes");
+				$("#r3CookTime1").html("---");
+				$("#r3CookTime2").html("---");
+				$("#r3IngredientsList").html("<p>1 cups self rising cornmeal mix<br>1 eggs<br>1 tablespoons vegetable oil<br><br>1/2 cup buttermilk<br></p>");
+				$("#r3Prep").html("<p>Preheat the oven to 400 degrees.<br>If you are using cast iron, place the 1/4 cup oil in the bottom of a 9 skillet and place over high heat on your stovetop while you make the batter.<br>Pour the cornmeal into a bowl and add the oil, egg, and buttermilk.Mix until combined and drop a small amount into your skillet.<br>If it sizzles immediately, go ahead and pour in your batter to within 1 inch of the top.<br>Transfer the skillet from the stove top to the hot oven.<br>Bake 25-30 minutes or until golden and set.</p>");
+			}
+			//DOUBLE PORTION
+			else
+			{
+				if($("input[type=radio][name=r3Portion]:checked").val() == "double")
+			{
+				$("#r3Serve").html("2 batches");
+				$("#r3PrepTime").html("1 hour 40 minutes");
+				$("#r3CookTime1").html("---");
+				$("#r3CookTime2").html("---");
+				$("#r3IngredientsList").html("<p>4 cups self rising cornmeal mix<br>4 eggs<br>4 tablespoons vegetable oil<br><br>3 cups buttermilk<br></p>");
+				$("#r3Prep").html("<p>Preheat the oven to 400 degrees.<br>If you are using cast iron, place the 1/4 cup oil in the bottom of a 9 skillet and place over high heat on your stovetop while you make the batter.<br>Pour the cornmeal into a bowl and add the oil, egg, and buttermilk.Mix until combined and drop a small amount into your skillet.<br>If it sizzles immediately, go ahead and pour in your batter to within 1 inch of the top.<br>Transfer the skillet from the stove top to the hot oven.<br>Bake 25-30 minutes or until golden and set.</p>");
+			}
+			}
+		}
+	});
+
+	// SHOW INGREDIENTS FOR RECIPE 3
+	$("#showR3Ingredients").click(function(){
+		$("#r3Ingredients").css("display","inline");
+		$("#showR3Ingredients").css("display","none");
+		$("#hideR3Ingredients").css({"display":"inline","background-color":"white", "border":".15em solid black"});
+	})
+	//HIDE INGREDIENTS FOR RECIPE 3
+	$("#hideR3Ingredients").click(function(){
+		$("#r3Ingredients").css("display","none");
+		$("#showR3Ingredients").css({"display":"inline","background-color":"white", "border":".15em solid black"});
+		$("#hideR3Ingredients").css("display","none");
+	});
+	//SHOW INSTRUCTIONS FOR RECIPE 3
+	$("#showR3Instructions").click(function(){
+		$("#r3Instructions").css("display","inline");
+		$("#showR3Instructions").css("display","none");
+		$("#hideR3Instructions").css({"display":"inline","background-color":"white", "border":".15em solid black"});
+	})
+	//HIDE INSTRUCTIONS FOR RECIPE 3
+	$("#hideR3Instructions").click(function(){
+		$("#r3Instructions").css("display","none");
+		$("#showR3Instructions").css({"display":"inline","background-color":"white", "border":".15em solid black"});
+		$("#hideR3Instructions").css("display","none");
+	}); 
+
+
+
+
+
+});
+
+</script>
+
+<style>
+
+body{
+	font-family: sans-serif;
+	 background-image: url("background.jpg");
+}
+
+#title{
+	background-color: black;
+	margin: 0 auto;
+	text-align: center;
+	width: 30%;
+}
+#note{
+	margin: 0 auto;
+	margin-top: 5%;
+	width: 50%;
+	text-align: center;
+	border-top: .05em solid black;
+}
+
+.recipe{
+	width: 45%;
+	float: left;
+}
+
+.image{
+	margin-top: 5%;
+	margin-bottom: 5%;
+	padding: 2%;
+	border: .30em solid black;
+	float: left;
+	background-color: white;
+}
+.clear{
+	clear: both;
+}
+
+.center{
+	width: 75%;
+	margin: 0 auto;
+}
+
+img{
+	box-shadow: .25em .25em .25em 0 black;
+}
+#cookiePage{
+	float: right;
+	margin-right: 5%;
+	text-decoration: none;
+	background-color: white; 
+	border: .15em solid black; 
+}
+
+
+#chiliIngredients{
+	display: none;
+}
+#chiliInstructions{
+	display: none;
+}
+#showR1Ingredients{
+	background-color: white; 
+	border: .15em solid black;
+}
+#showR1Instructions{
+	background-color: white; 
+	border: .15em solid black;
+}
+#hideR1Ingredients{
+	display: none;
+	background-color: white; 
+	border: .15em solid black;
+}
+#hideR1Instructions{
+	display: none;
+	background-color: white; 
+	border: .15em solid black;
+}
+
+
+
+#r2Ingredients{
+	display: none;
+}
+#r2Instructions{
+	display: none;
+}
+#showR2Ingredients{
+	background-color: white; 
+	border: .15em solid black;	
+}
+#showR2Instructions{
+	background-color: white; 
+	border: .15em solid black;	
+}
+#hideR2Ingredients{
+	display: none;
+	background-color: white; 
+	border: .15em solid black;
+}
+#hideR2Instructions{
+	display: none;
+	background-color:black; 
+	border: .15em solid white;
+}
+
+
+
+#r3Ingredients{
+	display: none;
+}
+#r3Instructions{
+	display: none;
+
+}
+#showR3Ingredients{
+	background-color: white; 
+	border: .15em solid black;	
+}
+#showR3Instructions{
+	background-color: white; 
+	border: .15em solid black;	
+}
+#hideR3Ingredients{
+	display: none;
+	
+}
+#hideR3Instructions{
+	display: none;
+	
+}
+
+
+
+.ui-tabs{
+	width: 75%;
+	margin: 0 auto;
+	background-color:  f7f9f9 ;
+}
+.ui-tabs-panel{
+	color: black;
+}
+.ui-tabs-nav{
+	background-color: black;
+}
+
+.ui-tabs .ui-tabs-nav .ui-tabs-tab{
+	background-color: white;
+	border: none;
+	color: black;
+	font-weight: bold;
+	box-shadow: inset 0em -.15em .25em 0em black;
+}
+.ui-tabs .ui-tabs-nav .ui-tabs-tab a{
+	color: black;
+}
+.ui-tabs .ui-tabs-nav .ui-tabs-active a{
+	background-color: white;
+	border: none;
+	color: black;
+	text-decoration: underline;
+}
+.ui-tabs .ui-tabs-nav .ui-tabs-active{
+	background-color: black;
+	border: none;
+	color: black;
+	box-shadow: none;
+}
+</style>
+
+</head>
+<body>
+
+
+<div id="tabs">
+<ul>
+<li><a href="#chili">Chili</a></li>
+<li><a href="#recipe2">Cinnamon Rolls</a></li>
+<li><a href="#recipe3">Cornbread</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+<!---------- R E C I P E   O N E ----------->
+
+<div id="chili">
+
+<div class="center">
+
+<div class="recipe">
+<h1>Chili</h1>
+Serves: <span id="chiliServe">6</span> <input type="radio" name="r1Portion" value="half">Half-Portion <input type="radio" name="r1Portion" value="full" checked>Full-Portion <input type="radio" name="r1Portion" value="double">Double-Portion<br>
+Preparation: <span id="chiliPrepTime">25</span> minutes<br>
+Cooking: <span id="chiliCookTime">6</span> hours</p>
+<p><input type="button" id="showR1Ingredients"value="Show Ingredients"/></p>
+<p><input type="button" id="hideR1Ingredients" value="Hide Ingredients"/></p>
+<p><input type="button" id="showR1Instructions" value="Show Preparation Instructions"/></p>
+<p><input type="button" id="hideR1Instructions" value="Hide Preparation Instructions"/></p>
+
+<div id="chiliIngredients">
+<h2>Ingredients:</h2>
+<p id="r1IngredientsList">2 tbsp. cooking oil<br>
+<br>1 pound of cooked ground beef</br>
+<br>1 can of chili beans undrained</br>
+<br>1 can of chili ready diced tomatoes</br>
+<br>4 tbsp. Chili powder</br>
+<br>1 cup shredded cheese (optional)</br>
+<br>1/2 cup sour cream (optional)</br>
+</div>
+
+<div id="chiliInstructions">
+<h2>Prep Insructions:</h2>
+<p id="r1Prep">
+<p>Heat cooking oil in 2 quart skillet.
+Mix the meat, beans and tomatoes together in large pot, bring it to a boil and then simmer for about 15-30 minutes.</p>
+You could also combine in a crock pot and cook on low for 4-6 hours.</p>
+<p>Serve into individual bowls and top with sour cream and cheese.</p>
+
+
+</div>
+</div>
+
+<div class="image">
+<img src="chili.jpg" alt="chili" width="200" height="250">
+</div>
+
+<div class="clear">
+</div>
+
+</div>
+</div>
+
+<!--------- R E C I P E   T W O --------->
+
+<div id="recipe2">
+
+<div class="center">
+<div class="recipe">
+<h1>Cinnamon Rolls</h1>
+Serves: <span id="r2Serve">24</span> <input type="radio" name="r2Portion" value="half">Half-Portion <input type="radio" name="r2Portion" value="full" checked>Full-Portion <input type="radio" name="r2Portion" value="double">Double-Portion<br>
+Preparation: <span id="r2PrepTime">25</span> minutes<br>
+Cooking: <span id="r2CookTime1">3</span> hours <span id="r2CookTime2">25</span> minutes</p>
+<p><input type="button" id="showR2Ingredients"value="Show Ingredients"/></p>
+<p><input type="button" id="hideR2Ingredients" value="Hide Ingredients"/></p>
+<p><input type="button" id="showR2Instructions" value="Show Preparation Instructions"/></p>
+<p><input type="button" id="hideR2Instructions" value="Hide Preparation Instructions"/></p>
+
+<div id="r2Ingredients">
+<h2>Ingredients:</h2>
+<p id="r2IngredientsList">
+
+<br>1 bag Rhodes Cinnamon Rolls (12 count - frozen)</br>
+<br>1 box Cook & Serve Vanilla Pudding</br>
+<br>1 stick of butter</br>
+
+</p>
+</div>
+
+<div id="r2Instructions">
+<h2>Prep Insructions:</h2>
+
+<p id="r2Prep">
+<p>Spray 9x13 baking dish with cooking spray. Line dish with frozen cinnamon rolls.
+Sprinkle pudding mix over the top of the cinnamon rolls. Melt stick of butter & drizzle on top.</p>
+<p>Cover dish with saran wrap. Be sure to spray saran wrap with cooking spray to prevent sticking. Refrigerate overnight.
+In the morning, set the cinnamon rolls out at room temperature for 45min - 1 hour prior to allow rolls to rise.</p>
+<p>Preheat oven to 350 degrees & bake for 20 minutes. Ice while hot.</p>
+
+
+</div>
+</div>
+
+<div class="image">
+<img src="Rolls.jpg" alt="Rolls" width="200" height="250">
+</div>
+
+<div class="clear">
+</div>
+
+</div>
+</div>
+
+<!------ R E C I P E   T H R E E ------>
+
+<div id="recipe3">
+
+<div class="center">
+
+<div class="recipe">
+<h1>Cornbread</h1>
+Serves: <span id="r3Serve">1 batch</span> <input type="radio" name="r3Portion" value="half">Half-Portion <input type="radio" name="r3Portion" value="full" checked>Full-Portion <input type="radio" name="r3Portion" value="double">Double-Portion<br>
+Preparation: <span id="r3PrepTime">1 hour 20 minutes</span><br>
+Cooking: <span id="r3CookTime1"></span>---<span id="r3CookTime2">---</span></p>
+<p><input type="button" id="showR3Ingredients"value="Show Ingredients"/></p>
+<p><input type="button" id="hideR3Ingredients" value="Hide Ingredients"/></p>
+<p><input type="button" id="showR3Instructions" value="Show Preparation Instructions"/></p>
+<p><input type="button" id="hideR3Instructions" value="Hide Preparation Instructions"/></p>
+
+<div id="r3Ingredients">
+<h2>Ingredients:</h2>
+<p id="r3IngredientsList">
+<br>2 cups self rising cornmeal mix</br>
+<br>2 eggs</br> 
+<br>2 tablespoons vegetable oil</br>
+<br>1/4 cup vegetable oil for the skillet if using cast iron</br>
+<br>1 cup buttermilk</br> 
+</p>
+</div>
+
+<div id="r3Instructions">
+<h2>Prep Insructions:</h2>
+
+<p id="r3Prep">
+<p>Preheat the oven to 400 degrees.
+If you are using cast iron, place the 1/4 cup oil in the bottom of a 9" skillet and place over high heat on your stovetop while you make the batter.
+Pour the cornmeal into a bowl and add the oil, egg, and buttermilk.
+Mix until combined and drop a small amount into your skillet.</p>
+<p>If it sizzles immediately, go ahead and pour in your batter to within 1 inch of the top. If you want a thinner cornbread, just don't pour in as much.
+Transfer the skillet from the stove top to the hot oven.
+Bake 25-30 minutes or until golden and set.</p>
+
+</div>
+</div>
+
+<div class="image">
+<img src="Cornbread.png" alt="cornbread" width="200" height="250">
+</div>
+
+<div class="clear">
+</div>
+
+</div>
+</div>
+<div id="note">
+<p>contact info:katelynneuhaus96@hotmail.com </p>
+</div>
+</div>
+</body>
+</html>
